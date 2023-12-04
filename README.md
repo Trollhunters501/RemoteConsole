@@ -9,4 +9,4 @@
 - Permission: remoteconsole.password.bypass
 # Credits
 - Icon from www.flaticon.com
-- Subscribe to Electro Games on YouTube!
+- Subscribe to Electro Games & Trollhunters501 on YouTube!

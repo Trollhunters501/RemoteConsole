@@ -10,3 +10,4 @@
 # Credits
 - Icon from www.flaticon.com
 - Subscribe to Electro Games & Trollhunters501 on YouTube!
+- Original plugin: [RemoteConsole](https://poggit.pmmp.io/p/RemoteConsole/2.0.2)

@@ -1,9 +1,9 @@
 script.registerScript({
     name: "RemoteConsoleNK",
-    version: "1.0",
+    version: "3.0.0",
     description: "Console in game!",
-    website: "https://github.com/Trollhunters501/JSEngineNK/",
-    authors: ["Creadores Program & ElectroGamesDev"]
+    website: "https://github.com/Trollhunters501/RemoteConsoleNK/",
+    authors: ["Creadores Program & Electro"]
 });
 var ConfigRCNK;
 script.addEventListener("Enable", function(){
@@ -54,6 +54,10 @@ script.addEventListener("PlayerFormRespondedEvent", function(event){
         let input = event.getResponse().getInputResponse(0);
         if(!event.wasClosed()){
             if(!title.equals("§lRemote Console")){
+                return;
+            }
+            if(input == null || input.trim().length == 0){
+                player.sendMessage("§cYou have entered an invalid command");
                 return;
             }
             server.dispatchCommand(server.getConsoleSender(), input);

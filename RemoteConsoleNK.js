@@ -1,19 +1,20 @@
-script.registerScript({
-    name: "RemoteConsoleNK",
-    version: "3.0.0",
-    description: "Console in game!",
-    website: "https://github.com/Trollhunters501/RemoteConsoleNK/",
-    authors: ["Creadores Program & Electro"]
-});
-var ConfigRCNK;
-script.addEventListener("Enable", function(){
+let ConfigRCNK;
+function load(){
+    let preR = manager.getFile("RemoteConsoleNK", "config.yml");
+    if(!preR.exists()){
+        let escritor = new java.io.FileWriter(preR);
+        escritor.write(require("./resources/config.yml"));
+        escritor.close();
+    }
+}
+function enable(){
     ConfigRCNK = manager.createConfig(manager.getFile("RemoteConsoleNK", "config.yml"), 2);
     if(!ConfigRCNK.get("password")){
         ConfigRCNK.set("password", "ChangeMe");
     }
     ConfigRCNK.save();
-    manager.createCommand("console", "Send commands through console", "RemoteConsoleNKcmd", "§cUsage: §a/console <password>", [], "op");
-});
+    manager.createCommand("console", "Send commands through console", RemoteConsoleNKcmd, "§cUsage: §a/console <password>", [], "op");
+}
 function RemoteConsoleNKcmd(sender, args, label){
     let Player = Java.type("cn.nukkit.Player");
     if(sender instanceof Player){
@@ -65,3 +66,7 @@ script.addEventListener("PlayerFormRespondedEvent", function(event){
         }
     }
 });
+module.exports = {
+    onEnable: enable,
+    onLoad: load
+};

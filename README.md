@@ -5,6 +5,9 @@
  - The password is configurable.
 # Requirements:
 JSEngineNK: https://cloudburstmc.org/resources/jsenginenk.939/
+
+JSENK2: https://cloudburstmc.org/resources/jsenk2.1017/
+
 Place the .zip file in the plugins/JSEngineNK/ folder
 Extract the content
 Delete the .zip file
